@@ -1,5 +1,6 @@
 import Hapi from "@hapi/hapi";
 import * as db from "./models";
+import routes from "./routes";
 
 const init = async () => {
   const server = Hapi.server({
@@ -16,13 +17,7 @@ const init = async () => {
       console.log("Failed to sync db: " + err.message);
     });
 
-  server.route({
-    method: "GET",
-    path: "/",
-    handler: (request, h) => {
-      return "Hello World!";
-    },
-  });
+  server.route(routes);
 
   await server.start();
   console.log("Server running on %s", server.info.uri);
