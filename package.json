@@ -16,17 +16,13 @@
     "@hapi/hapi": "^21.3.2",
     "csv-parse": "^5.4.0",
     "pdf-lib": "^1.17.1",
-    "pdf-parse": "^1.1.1",
     "pdfjs-dist": "^3.8.162",
-    "pdfmake": "^0.2.7",
-    "pdfreader": "^3.0.0",
     "sequelize": "^6.32.1",
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "@types/csv-parse": "^1.2.2",
     "@types/node": "^20.4.1",
-    "@types/pdf-parse": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.44.0",
