@@ -1,11 +1,24 @@
 import { ServerRoute } from "@hapi/hapi";
-import receberBoleto from "../controllers/receberBoleto";
+import receberBoletoCSV from "../controllers/receberBoletoCSV";
+import receberBoletoPDF from "../controllers/receberBoletoPDF";
 
 const routes: ServerRoute[] = [
   {
     method: "POST",
-    path: "/receber-boleto",
-    handler: receberBoleto,
+    path: "/receber-boleto-csv",
+    handler: receberBoletoCSV,
+    options: {
+      payload: {
+        parse: true,
+        allow: "multipart/form-data",
+        multipart: { output: "stream" },
+      },
+    },
+  },
+  {
+    method: "POST",
+    path: "/receber-boleto-pdf",
+    handler: receberBoletoPDF,
     options: {
       payload: {
         parse: true,

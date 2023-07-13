@@ -7,7 +7,7 @@ import Boleto from "../models/Boleto";
 import Lote from "../models/Lote";
 import { Op } from "sequelize";
 
-const uploadHandler = async (request: Request, h: ResponseToolkit) => {
+const handler = async (request: Request, h: ResponseToolkit) => {
   const data = request.payload as { file: Readable };
   const file = data.file;
   const parseCsv = file.pipe(
@@ -54,4 +54,4 @@ const uploadHandler = async (request: Request, h: ResponseToolkit) => {
   return JSON.stringify(boletos);
 };
 
-export default uploadHandler;
+export default handler;
