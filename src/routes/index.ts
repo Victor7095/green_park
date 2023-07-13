@@ -1,6 +1,7 @@
 import { ServerRoute } from "@hapi/hapi";
 import receberBoletoCSV from "../controllers/receberBoletoCSV";
 import receberBoletoPDF from "../controllers/receberBoletoPDF";
+import boletos from "../controllers/boletos";
 
 const routes: ServerRoute[] = [
   {
@@ -26,6 +27,10 @@ const routes: ServerRoute[] = [
         multipart: { output: "stream" },
       },
     },
+  }, {
+    method: "GET",
+    path: "/boletos",
+    handler: boletos
   }
 ]
 

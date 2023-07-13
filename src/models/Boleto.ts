@@ -3,7 +3,7 @@ import sequelize from '.';
 import Lote from './Lote';
 
 
-interface BoletoAttributes {
+export interface BoletoAttributes {
   id: number;
   nomeSacado: string;
   idLote: number;
