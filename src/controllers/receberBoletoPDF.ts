@@ -2,9 +2,9 @@ import { Request } from "@hapi/hapi";
 import { Readable } from "stream";
 import * as pdfjsLib from "pdfjs-dist/legacy/build/pdf.js";
 import { TextItem } from "pdfjs-dist/types/src/display/api";
-import Boleto from "../models/Boleto";
-import { Op } from "sequelize";
 import { PDFDocument } from "pdf-lib";
+import { Op } from "sequelize";
+import Boleto from "../models/Boleto";
 import fs from "fs";
 
 const getContentFromPDF = async (file: Uint8Array) => {
